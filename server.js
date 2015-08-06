@@ -52,6 +52,23 @@ const Todo = mongoose.model('Todo', {
 });
 
 // =============================================================================
+// Define Routes
+
+// Get all todos
+app.get('api/todo', function(req, res) {
+  Todo.find(function(err, todo) {
+    if (err) {
+
+      // Nothing after res.send(err) will execute
+      res.send(err);
+    }
+
+    // Return all todos in JSON
+    res.json(todo);
+  });
+});
+
+// =============================================================================
 // Initilize app
 app.listen(8080);
 console.log('App is running on port 8080');
