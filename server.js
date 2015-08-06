@@ -91,6 +91,26 @@ app.post('api/todo', function(req, res) {
   });
 });
 
+// DELETE a todo
+app.delete('/api/todo/:todo_id', function(req, res) {
+  Todo.remove({
+    _id: req.params.todo_id
+  }, function(err, todo) {
+    if (err) {
+      res.send(err);
+    }
+
+    // Get/return all todos after you delete one
+    Todo.find(function(err, todo) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json(todo);
+    });
+  });
+});
+
 // =============================================================================
 // Initilize app
 app.listen(8080);
