@@ -33,4 +33,16 @@ function mainController($scope, $http) {
         console.log('Error: ' + data);
       });
   };
+
+  // Delete todo after selecting checkbox
+  $scope.deleteTodo = function(id) {
+    $http.delete('/api/todo' + id)
+      .success(function(data) {
+        $scope.todo = data;
+        console.log(data);
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+      });
+  };
 }
