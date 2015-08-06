@@ -68,6 +68,29 @@ app.get('api/todo', function(req, res) {
   });
 });
 
+// Create a todo
+app.post('api/todo', function(req, res) {
+
+  // Info comes from AJAX request in Angular
+  Todo.create({
+    text: req.body.text,
+    done: false
+  }, function(err, todo) {
+    if (err) {
+      res.send(err);
+    }
+
+    // Get/return all todos after you create one
+    Todo.find(function(err, todo) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json(todo);
+    });
+  });
+});
+
 // =============================================================================
 // Initilize app
 app.listen(8080);
