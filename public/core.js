@@ -20,7 +20,7 @@ function mainController($scope, $http) {
 
   // When submitting the add form, send text to node API
   $scope.createTodo = function() {
-    $http.post('api/todo', $scope.formData)
+    $http.post('/api/todo', $scope.formData)
       .success(function(data) {
 
         // Clear the form so user can enter another
