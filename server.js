@@ -16,8 +16,18 @@ const argv           = require('yargs');
 // Configuration
 
 // DB Config
-const DB_URL = argv.db || process.env.DATABASE_URL;
-mongoose.connect(DB_URL);
+/*
+const MONGO_URL = process.env.MONGO_URL;
+console.log('MONGO_URL is: ' + MONGO_URL);
+
+//const DB_URL = argv.db || process.env.DATABASE_URL;
+mongoose.connect(MONGO_URL);
+
+// mongoose.connect('mongodb://ds059672.mongolab.com:59672/angular-test');
+*/
+
+const MONGO_URL = 'mongodb://localhost/angularApp';
+mongoose.connect(MONGO_URL);
 
 // Set static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
