@@ -112,6 +112,12 @@ app.delete('/api/todo/:todo_id', function(req, res) {
 });
 
 // =============================================================================
+// Angular application - Loads file when we hit localhost:8080
+app.get('*', function(req, res) {
+  res.sendfile('./public/index.html');
+});
+
+// =============================================================================
 // Initilize app
 app.listen(8080);
 console.log('App is running on port 8080');
