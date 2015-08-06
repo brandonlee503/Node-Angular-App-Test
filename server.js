@@ -1,6 +1,6 @@
 // server.js
 
-//jscs:disable requireTrailingComma, disallowQuotedKeysInObjects
+//jscs:disable requireTrailingComma, disallowQuotedKeysInObjects, requireCamelCaseOrUpperCaseIdentifiers
 
 'use strict';
 
