@@ -4,7 +4,7 @@
   "description": "A simple single page To-do app",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon --harmony server.js"
+    "start": "nodemon --harmony server.js"
   },
   "author": "Brandon Lee",
   "license": "MIT",
