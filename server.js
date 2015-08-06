@@ -15,6 +15,9 @@ const argv           = require('yargs');
 // =============================================================================
 // Configuration
 
+//TODO Fix Mongo DB connnection
+//TODO Learn up on these libs
+
 // DB Config
 /*
 const MONGO_URL = process.env.MONGO_URL;
