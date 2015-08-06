@@ -15,8 +15,8 @@ const argv           = require('yargs');
 // =============================================================================
 // Configuration
 
-//TODO Fix Mongo DB connnection
-//TODO Learn up on these libs
+// TODO: Fix Mongo DB connnection
+// TODO: Learn up on these libs
 
 // DB Config
 /*
