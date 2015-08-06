@@ -54,7 +54,7 @@ const Todo = mongoose.model('Todo', {
 // =============================================================================
 // Define Routes
 
-// Get all todos
+// GET all todos
 app.get('api/todo', function(req, res) {
   Todo.find(function(err, todo) {
     if (err) {
@@ -68,7 +68,7 @@ app.get('api/todo', function(req, res) {
   });
 });
 
-// Create a todo
+// CREATE a todo
 app.post('api/todo', function(req, res) {
 
   // Info comes from AJAX request in Angular
