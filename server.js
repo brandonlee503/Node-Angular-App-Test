@@ -43,6 +43,12 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
 
 // =============================================================================
+// Define model
+const Todo = mongoose.model('Todo', {
+  text:String
+});
+
+// =============================================================================
 // Initilize app
 app.listen(8080);
 console.log('App is running on port 8080');
