@@ -17,4 +17,20 @@ function mainController($scope, $http) {
     .error(function(data) {
       console.log('Error: ' + data);
     });
+
+  // When submitting the add form, send text to node API
+  $scope.createTodo = function() {
+    $http.post('api/todo', $scope.formData)
+      .success(function(data) {
+
+        // Clear the form so user can enter another
+        $scope.formData = {};
+
+        $scope.todo = data;
+        console.log(data);
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+      });
+  };
 }
