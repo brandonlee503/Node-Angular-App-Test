@@ -1,5 +1,7 @@
 // server.js
 
+//jscs:disable requireTrailingComma, disallowQuotedKeysInObjects
+
 'use strict';
 
 const express        = require('express');
