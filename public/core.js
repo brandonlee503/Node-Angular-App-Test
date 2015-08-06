@@ -6,7 +6,7 @@
 const brandonTodo = angular.module('brandonTodo', []);
 
 function mainController($scope, $http) {
-  $scope.formdata = {};
+  $scope.formData = {};
 
   // When landing on the page, get all todos and display them
   $http.get('/api/todo')
