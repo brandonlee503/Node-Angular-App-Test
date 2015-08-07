@@ -11,7 +11,9 @@ function mainController($scope, $http) {
   // When landing on the page, get all todos and display them
   $http.get('/api/todo')
     .success(function(data) {
-      $scope.todos = data;
+
+      // On page load, we GET /api/todo and bind the JSON into the $scope.todo
+      $scope.todo = data;
       console.log(data);
     })
     .error(function(data) {
