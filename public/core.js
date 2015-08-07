@@ -1,19 +1,12 @@
-// core.js
-
-'use strict';
-
-// Declare module
-const brandonTodo = angular.module('brandonTodo', []);
+var brandonTodo = angular.module('brandonTodo', []);
 
 function mainController($scope, $http) {
   $scope.formData = {};
 
-  // When landing on the page, get all todos and display them
-  $http.get('/api/todo')
+  // When landing on the page, get all todos and show them
+  $http.get('/api/todos')
     .success(function(data) {
-
-      // On page load, we GET /api/todo and bind the JSON into the $scope.todo
-      $scope.todo = data;
+      $scope.todos = data;
     })
     .error(function(data) {
       console.log('Error: ' + data);
@@ -21,13 +14,12 @@ function mainController($scope, $http) {
 
   // When submitting the add form, send text to node API
   $scope.createTodo = function() {
-    $http.post('/api/todo', $scope.formData)
+    $http.post('/api/todos', $scope.formData)
       .success(function(data) {
 
-        // Clear the form so user can enter another
+        // Clear the form for user
         $scope.formData = {};
-
-        $scope.todo = data;
+        $scope.todos = data;
         console.log(data);
       })
       .error(function(data) {
@@ -35,12 +27,11 @@ function mainController($scope, $http) {
       });
   };
 
-  // Delete todo after selecting checkbox
+  // Delete a todo after selecting checkbox
   $scope.deleteTodo = function(id) {
-    $http.delete('/api/todo' + id)
+    $http.delete('/api/todos/' + id)
       .success(function(data) {
-        $scope.todo = data;
-        console.log(data);
+        $scope.todos = data;
       })
       .error(function(data) {
         console.log('Error: ' + data);
