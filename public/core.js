@@ -14,7 +14,6 @@ function mainController($scope, $http) {
 
       // On page load, we GET /api/todo and bind the JSON into the $scope.todo
       $scope.todo = data;
-      console.log(data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
